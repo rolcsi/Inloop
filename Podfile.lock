@@ -1,0 +1,18 @@
+PODS:
+  - Alamofire (4.5.0)
+  - DATASource (6.1.5)
+  - Sync (3.3.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.4)
+  - DATASource (~> 6)
+  - Sync (~> 3)
+
+SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  DATASource: 52b86cfff6c7ac3db45192c01f7839c7473576c3
+  Sync: 7bf0699de46e470d68dc5f1f8408e4c19536c71f
+
+PODFILE CHECKSUM: 8352725cee4190385b63d01412ed3d61ca0d6a3c
+
+COCOAPODS: 1.2.1

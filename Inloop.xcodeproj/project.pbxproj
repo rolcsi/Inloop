@@ -16,9 +16,12 @@
 		C0F769A71F1FC18C000ED3D9 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F769A61F1FC18C000ED3D9 /* OrderTableViewCell.swift */; };
 		C0F769AA1F1FC2EE000ED3D9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F769A91F1FC2EE000ED3D9 /* DetailViewController.swift */; };
 		C0F769AC1F1FC303000ED3D9 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F769AB1F1FC303000ED3D9 /* DetailTableViewCell.swift */; };
+		C50630A33005E682C8239197 /* Pods_Inloop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BC930897245AA7510A1DA89 /* Pods_Inloop.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8BC930897245AA7510A1DA89 /* Pods_Inloop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Inloop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EF325BD36EB22BA13BDC3A9 /* Pods-Inloop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inloop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Inloop/Pods-Inloop.debug.xcconfig"; sourceTree = "<group>"; };
 		C0F769881F1FB611000ED3D9 /* Inloop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inloop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0F7698B1F1FB611000ED3D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0F769901F1FB611000ED3D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -30,6 +33,7 @@
 		C0F769A61F1FC18C000ED3D9 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		C0F769A91F1FC2EE000ED3D9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C0F769AB1F1FC303000ED3D9 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		D999DDE15FC86BA1EB477DE1 /* Pods-Inloop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inloop.release.xcconfig"; path = "Pods/Target Support Files/Pods-Inloop/Pods-Inloop.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C50630A33005E682C8239197 /* Pods_Inloop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		90FCB57D1E8F1D8E274FA41E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8BC930897245AA7510A1DA89 /* Pods_Inloop.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE8C09B36084B2DA9BE9B4C3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9EF325BD36EB22BA13BDC3A9 /* Pods-Inloop.debug.xcconfig */,
+				D999DDE15FC86BA1EB477DE1 /* Pods-Inloop.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C0F7697F1F1FB611000ED3D9 = {
 			isa = PBXGroup;
 			children = (
 				C0F7698A1F1FB611000ED3D9 /* Inloop */,
 				C0F769891F1FB611000ED3D9 /* Products */,
+				BE8C09B36084B2DA9BE9B4C3 /* Pods */,
+				90FCB57D1E8F1D8E274FA41E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,9 +123,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C0F7699A1F1FB611000ED3D9 /* Build configuration list for PBXNativeTarget "Inloop" */;
 			buildPhases = (
+				E88C7EABECF37AD1828BFD24 /* [CP] Check Pods Manifest.lock */,
 				C0F769841F1FB611000ED3D9 /* Sources */,
 				C0F769851F1FB611000ED3D9 /* Frameworks */,
 				C0F769861F1FB611000ED3D9 /* Resources */,
+				1D968DDBC5D949034D216F88 /* [CP] Embed Pods Frameworks */,
+				2D986999BC278A9D433A4909 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -159,6 +186,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D968DDBC5D949034D216F88 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Inloop/Pods-Inloop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D986999BC278A9D433A4909 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Inloop/Pods-Inloop-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E88C7EABECF37AD1828BFD24 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C0F769841F1FB611000ED3D9 /* Sources */ = {
@@ -291,6 +366,7 @@
 		};
 		C0F7699B1F1FB611000ED3D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EF325BD36EB22BA13BDC3A9 /* Pods-Inloop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DV4J238V5A;
@@ -306,6 +382,7 @@
 		};
 		C0F7699C1F1FB611000ED3D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D999DDE15FC86BA1EB477DE1 /* Pods-Inloop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DV4J238V5A;
