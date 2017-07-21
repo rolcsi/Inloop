@@ -22,7 +22,7 @@ class AddViewController: UIViewController, StackVC {
 
         self.navigationItem.title = "Add New Contact"
         
-        let optionalUrl = URL(string: "https://inloop-contacts.appspot.com/_ah/api/contactendpoint/v1/contact")
+        let optionalUrl = URL(string: Constants.ordersUrl)
         
         
         guard let url = optionalUrl else { return }
@@ -60,8 +60,52 @@ class AddViewController: UIViewController, StackVC {
         return nil
     }
     
+    func checkFields() {
+        
+        guard let text = self.nameTextField.text,
+            text.characters.count > 4 else {
+            
+            self.showAlert(text: "Name must be at least 5 characters")
+            return
+        }
+        
+        guard let phone = self.phoneTextField.text,
+            phone.characters.count > 4 else {
+                
+                self.showAlert(text: "Phone must be at least 5 characters")
+                return
+        }
+    }
+    
+    func showAlert(text: String) {
+        
+        let alertController = UIAlertController(title: "Alert", message: text, preferredStyle: .alert)
+        self.present(alertController, animated: true) { 
+            
+            print("alert shown")
+        }
+    }
+    
     @IBAction func addButtonPressed(_ sender: Any) {
         
+        //self.checkFields()
+        
+        var parameters: [String: Any] = [:]
+        parameters["name"] = "010101"
+        parameters["phone"] = 0909009
+        
+        let optionalUrl = URL(string: Constants.addUrl)
+        
+        guard let url = optionalUrl else { return }
+        
+        let request = Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+        request.responseJSON { (response) in
+            
+            if case .success(_) = response.result {
+                
+                print("added")
+            }
+        }
     }
 }
 

@@ -29,7 +29,7 @@
         <!--Orders View Controller-->
         <scene sceneID="T88-oi-g8H">
             <objects>
-                <viewController id="W4G-OX-Tj8" customClass="OrdersViewController" customModule="Inloop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="W4G-OX-Tj8" customClass="OrdersViewController" customModule="Inloop" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2im-Ai-HPv"/>
                         <viewControllerLayoutGuide type="bottom" id="JTn-qz-P9D"/>
@@ -114,7 +114,7 @@
         <!--Detail View Controller-->
         <scene sceneID="PeA-rZ-o9b">
             <objects>
-                <viewController id="Ras-XM-WRz" customClass="DetailViewController" customModule="Inloop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Ras-XM-WRz" customClass="DetailViewController" customModule="Inloop" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ocy-k7-vWQ"/>
                         <viewControllerLayoutGuide type="bottom" id="1cY-Nz-A5p"/>
@@ -215,7 +215,7 @@
         <!--Add View Controller-->
         <scene sceneID="pCE-xR-Bil">
             <objects>
-                <viewController id="WrH-Op-cqc" customClass="AddViewController" customModule="Inloop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="WrH-Op-cqc" customClass="AddViewController" customModule="Inloop" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dLe-N5-Tgj"/>
                         <viewControllerLayoutGuide type="bottom" id="bgr-9a-CbF"/>
@@ -244,7 +244,7 @@
                                 <rect key="frame" x="20" y="134" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                 <connections>
                                     <outlet property="delegate" destination="WrH-Op-cqc" id="Z12-Af-ooS"/>
                                 </connections>

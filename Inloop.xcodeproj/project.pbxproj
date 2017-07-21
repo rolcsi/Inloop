@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C012D46B1F2094C20091FDE0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C012D4691F2094C20091FDE0 /* Model.xcdatamodeld */; };
+		C01F375A1F22174A00CABE15 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01F37591F22174A00CABE15 /* Constants.swift */; };
 		C0F7698C1F1FB611000ED3D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F7698B1F1FB611000ED3D9 /* AppDelegate.swift */; };
 		C0F769911F1FB611000ED3D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0F7698F1F1FB611000ED3D9 /* Main.storyboard */; };
 		C0F769931F1FB611000ED3D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0F769921F1FB611000ED3D9 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		8BC930897245AA7510A1DA89 /* Pods_Inloop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Inloop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EF325BD36EB22BA13BDC3A9 /* Pods-Inloop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inloop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Inloop/Pods-Inloop.debug.xcconfig"; sourceTree = "<group>"; };
 		C012D46A1F2094C20091FDE0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		C01F37591F22174A00CABE15 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C0F769881F1FB611000ED3D9 /* Inloop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inloop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0F7698B1F1FB611000ED3D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0F769901F1FB611000ED3D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				C0F769921F1FB611000ED3D9 /* Assets.xcassets */,
 				C0F769941F1FB611000ED3D9 /* LaunchScreen.storyboard */,
 				C0F769971F1FB611000ED3D9 /* Info.plist */,
+				C01F37591F22174A00CABE15 /* Constants.swift */,
 			);
 			path = Inloop;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				C0F769AA1F1FC2EE000ED3D9 /* DetailViewController.swift in Sources */,
 				C0F7698C1F1FB611000ED3D9 /* AppDelegate.swift in Sources */,
 				C0F769A21F1FB6B3000ED3D9 /* AddViewController.swift in Sources */,
+				C01F375A1F22174A00CABE15 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
