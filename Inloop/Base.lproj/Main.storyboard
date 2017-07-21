@@ -87,6 +87,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="delegate" destination="W4G-OX-Tj8" id="1bB-GT-HK9"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -99,7 +102,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="utK-FC-a3p"/>
                     <connections>
-                        <outlet property="tableview" destination="y0x-Vf-Lwf" id="k5y-M3-iCK"/>
+                        <outlet property="tableView" destination="y0x-Vf-Lwf" id="ZiX-Ga-Uhn"/>
                         <segue destination="WrH-Op-cqc" kind="show" identifier="showAdd" id="sji-ht-2ag"/>
                         <segue destination="Ras-XM-WRz" kind="show" identifier="showDetail" id="Gio-L6-zwa"/>
                     </connections>
@@ -171,8 +174,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITd-Ep-AZn">
-                                        <rect key="frame" x="10" y="36" width="355" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITd-Ep-AZn">
+                                        <rect key="frame" x="10" y="36" width="355" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -201,7 +204,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableview" destination="cAO-At-Q7F" id="8Dk-O6-Ooj"/>
+                        <outlet property="phoneLabel" destination="ITd-Ep-AZn" id="Ic7-Dt-vL2"/>
+                        <outlet property="tableView" destination="cAO-At-Q7F" id="Mxm-AW-ykJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kwv-eF-w5d" userLabel="First Responder" sceneMemberID="firstResponder"/>

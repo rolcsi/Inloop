@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C012D46B1F2094C20091FDE0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C012D4691F2094C20091FDE0 /* Model.xcdatamodeld */; };
 		C0F7698C1F1FB611000ED3D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F7698B1F1FB611000ED3D9 /* AppDelegate.swift */; };
 		C0F769911F1FB611000ED3D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0F7698F1F1FB611000ED3D9 /* Main.storyboard */; };
 		C0F769931F1FB611000ED3D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0F769921F1FB611000ED3D9 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		8BC930897245AA7510A1DA89 /* Pods_Inloop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Inloop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EF325BD36EB22BA13BDC3A9 /* Pods-Inloop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inloop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Inloop/Pods-Inloop.debug.xcconfig"; sourceTree = "<group>"; };
+		C012D46A1F2094C20091FDE0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		C0F769881F1FB611000ED3D9 /* Inloop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inloop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0F7698B1F1FB611000ED3D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0F769901F1FB611000ED3D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,6 +67,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C012D4681F2094830091FDE0 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				C012D4691F2094C20091FDE0 /* Model.xcdatamodeld */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		C0F7697F1F1FB611000ED3D9 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +96,7 @@
 		C0F7698A1F1FB611000ED3D9 /* Inloop */ = {
 			isa = PBXGroup;
 			children = (
+				C012D4681F2094830091FDE0 /* Database */,
 				C0F769A31F1FC167000ED3D9 /* Orders */,
 				C0F769A81F1FC2EE000ED3D9 /* Detail */,
 				C0F7698B1F1FB611000ED3D9 /* AppDelegate.swift */,
@@ -243,6 +254,7 @@
 				C0F769AC1F1FC303000ED3D9 /* DetailTableViewCell.swift in Sources */,
 				C0F769A51F1FC167000ED3D9 /* OrdersViewController.swift in Sources */,
 				C0F769A71F1FC18C000ED3D9 /* OrderTableViewCell.swift in Sources */,
+				C012D46B1F2094C20091FDE0 /* Model.xcdatamodeld in Sources */,
 				C0F769AA1F1FC2EE000ED3D9 /* DetailViewController.swift in Sources */,
 				C0F7698C1F1FB611000ED3D9 /* AppDelegate.swift in Sources */,
 				C0F769A21F1FB6B3000ED3D9 /* AddViewController.swift in Sources */,
@@ -415,8 +427,22 @@
 				C0F7699C1F1FB611000ED3D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C012D4691F2094C20091FDE0 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C012D46A1F2094C20091FDE0 /* Model.xcdatamodel */,
+			);
+			currentVersion = C012D46A1F2094C20091FDE0 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C0F769801F1FB611000ED3D9 /* Project object */;
 }
