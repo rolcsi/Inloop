@@ -93,14 +93,18 @@ class AddViewController: UIViewController {
             return
         }
 
-        let request = Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
-        request.responseJSON { (response) in
+        let request = Alamofire.request(url, method: .post, parameters: [:], encoding: JSONEncoding.default)
+        request.validate().responseJSON { (response) in
 
             self.allowEditing(bool: true)
 
             if case .success(_) = response.result {
 
                 self.navigationController?.popViewController(animated: true)
+            } else if case .failure(let error) = response.result {
+                
+                let alert = UIAlertController.simpleAlert(text: error.localizedDescription)
+                self.present(alert, animated: true)
             }
         }
     }
