@@ -15,6 +15,8 @@ enum Constants {
     static let ordersUrl = api + "contactendpoint/v1/contact"
     static let detailUrl = api + "orderendpoint/v1/order/"
     static let addUrl = api + "contactendpoint/v1/contact"
+    
+    static let mailDomain = "@somewhere.com"
 }
 
 
@@ -52,5 +54,35 @@ enum Constants {
  //item.removeValue(forKey: "id")
  //item.set(value: idDict["id"], forKey: "id")
  //idDict["id"]
+ }
+ 
+ self.dataStack?.performInNewBackgroundContext { context in
+ 
+ 
+ 
+ let safeParent = try! context.fetch(self.userId!, inEntityNamed: "CDUser")
+ guard let entity = NSEntityDescription.entity(forEntityName: "CDItem", in: context) else { fatalError("Couldn't find entity named: CDItem") }
+ let relationships = entity.relationships(forDestination: safeParent!.entity)
+ var predicate: NSPredicate?
+ let firstRelationship = relationships.first
+ 
+ if let firstRelationship = firstRelationship {
+ predicate = NSPredicate(format: "%K = %@", firstRelationship.name, safeParent!)
+ }
+ 
+ context.changes(newItems, inEntityNamed: "CDItem", predicate: nil, parent: safeParent, parentRelationship: firstRelationship?.inverseRelationship, operations: .all, completion: { error in
+ 
+ 
+ print("sync error: \(String(describing: error))")
+ })
+ }
+ 
+ NotificationCenter.default.addObserver(self, selector: #selector(self.changeNotification), name: .NSManagedObjectContextObjectsDidChange, object: self.dataStack!.mainContext)
+
+ 
+ func changeNotification(notification: NSNotification) {
+ let deletedObjects = notification.userInfo?[NSDeletedObjectsKey]
+ let insertedObjects = notification.userInfo?[NSInsertedObjectsKey]
+ print("updated")
  }
  */

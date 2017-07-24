@@ -10,89 +10,52 @@ import UIKit
 import Alamofire
 import Sync
 
-class AddViewController: UIViewController, StackVC {
+class AddViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
-    
-    var dataStack: DataStack?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationItem.title = "Add New Contact"
-        
-        let optionalUrl = URL(string: Constants.ordersUrl)
-        
-        
-        guard let url = optionalUrl else { return }
-        
-        let request = Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default)
-        request.responseJSON { (response) in
-            
-            if case .success(let json) = response.result {
-
-                guard let dict = json as? NSDictionary,
-                    let items = dict["items"] as? [[String : Any]]
-                    else { return }
-                
-                self.dataStack?.performInNewBackgroundContext { context in
-                    
-                    context.sync(items, inEntityNamed: "CDUser", completion: { (error) in
-                    
-                        // TODO: Alert
-                        print("sync error: \(String(describing: error))")
-                    })
-                }
-            }
-        }
-        
     }
     
-    func convertToDictionary(text: String) -> [String: Any]? {
-        if let data = text.data(using: .utf8) {
-            do {
-                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-        return nil
-    }
+    // MARK: Private methods
     
-    func checkFields() {
+    private func checkFields() -> Bool {
         
         guard let text = self.nameTextField.text,
             text.characters.count > 4 else {
             
-            self.showAlert(text: "Name must be at least 5 characters")
-            return
+            let alert = UIAlertController.simpleAlert(text: "Name must be at least 5 characters.")
+            self.present(alert, animated: true)
+                
+            return false
         }
         
         guard let phone = self.phoneTextField.text,
             phone.characters.count > 4 else {
                 
-                self.showAlert(text: "Phone must be at least 5 characters")
-                return
+                let alert = UIAlertController.simpleAlert(text: "Name must be at least 5 characters.")
+                self.present(alert, animated: true)
+                
+                return false
         }
+        
+        return true
     }
     
-    func showAlert(text: String) {
-        
-        let alertController = UIAlertController(title: "Alert", message: text, preferredStyle: .alert)
-        self.present(alertController, animated: true) { 
-            
-            print("alert shown")
-        }
-    }
+    
     
     @IBAction func addButtonPressed(_ sender: Any) {
         
-        //self.checkFields()
+        guard self.checkFields() else { return }
         
         var parameters: [String: Any] = [:]
-        parameters["name"] = "010101"
-        parameters["phone"] = 0909009
+        parameters["name"] = self.nameTextField.text
+        parameters["phone"] = self.phoneTextField.text
         
         let optionalUrl = URL(string: Constants.addUrl)
         
@@ -103,7 +66,8 @@ class AddViewController: UIViewController, StackVC {
             
             if case .success(_) = response.result {
                 
-                print("added")
+                debugPrint("Order added")
+                self.navigationController?.popViewController(animated: true)
             }
         }
     }
@@ -111,4 +75,16 @@ class AddViewController: UIViewController, StackVC {
 
 extension AddViewController: UITextFieldDelegate {
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        switch textField {
+        case self.nameTextField:
+            
+            self.phoneTextField.becomeFirstResponder()
+        default:
+            break
+        }
+        
+        return true
+    }
 }
