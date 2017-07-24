@@ -16,10 +16,23 @@ class AddViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     
+    static let addButtonOffset: CGFloat = 50.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationItem.title = "Add New Contact"
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(AddViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(AddViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(AddViewController.handleTap(_:)))
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    deinit {
+        
+        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: Private methods
@@ -66,10 +79,32 @@ class AddViewController: UIViewController {
             
             if case .success(_) = response.result {
                 
-                debugPrint("Order added")
                 self.navigationController?.popViewController(animated: true)
             }
         }
+    }
+    
+    @objc private func handleTap(_ sender: UITapGestureRecognizer) {
+     
+        self.nameTextField.resignFirstResponder()
+        self.phoneTextField.resignFirstResponder()
+    }
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        
+        var userInfo = notification.userInfo
+        guard var keyboardFrame: CGRect = (userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        
+        var contentInset:UIEdgeInsets = self.scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height
+        scrollView.contentInset = contentInset
+    }
+    
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        
+        let contentInset: UIEdgeInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInset
     }
 }
 
@@ -86,5 +121,18 @@ extension AddViewController: UITextFieldDelegate {
         }
         
         return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        if textField == self.phoneTextField {
+
+            var frame = self.phoneTextField.frame
+            frame.size.height += AddViewController.addButtonOffset
+            self.scrollView.scrollRectToVisible(frame, animated: true)
+        } else {
+            
+            self.scrollView.scrollRectToVisible(self.nameTextField.frame, animated: true)
+        }
     }
 }
