@@ -287,12 +287,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uwx-yS-ij2" firstAttribute="leading" secondItem="IoQ-qw-T2Z" secondAttribute="leading" id="1Vo-bf-Aum"/>
-                            <constraint firstItem="bgr-9a-CbF" firstAttribute="top" secondItem="uwx-yS-ij2" secondAttribute="bottom" id="5BC-A1-67X"/>
                             <constraint firstItem="uwx-yS-ij2" firstAttribute="top" secondItem="dLe-N5-Tgj" secondAttribute="bottom" id="8cm-1C-Gpk"/>
+                            <constraint firstAttribute="bottom" secondItem="uwx-yS-ij2" secondAttribute="bottom" id="by5-bD-CLZ"/>
                             <constraint firstAttribute="trailing" secondItem="uwx-yS-ij2" secondAttribute="trailing" id="vbR-Dg-sel"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="NQo-5n-95B" id="gkb-fb-eVY"/>
                         <outlet property="nameTextField" destination="Klq-X0-GxC" id="QfY-AF-t7R"/>
                         <outlet property="phoneTextField" destination="OJc-7m-5rA" id="UbB-it-Let"/>
                         <outlet property="scrollView" destination="uwx-yS-ij2" id="Ltu-tA-NPk"/>
