@@ -93,7 +93,7 @@ class AddViewController: UIViewController {
             return
         }
 
-        let request = Alamofire.request(url, method: .post, parameters: [:], encoding: JSONEncoding.default)
+        let request = Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
         request.validate().responseJSON { (response) in
 
             self.allowEditing(bool: true)
