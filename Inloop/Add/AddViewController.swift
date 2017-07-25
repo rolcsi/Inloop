@@ -59,7 +59,7 @@ class AddViewController: UIViewController {
         guard let phone = self.phoneTextField.text,
             phone.characters.count > 4 else {
 
-                let alert = UIAlertController.simpleAlert(text: "Name must be at least 5 characters.")
+                let alert = UIAlertController.simpleAlert(text: "Number must be at least 5 characters.")
                 self.present(alert, animated: true)
 
                 return false
@@ -155,14 +155,13 @@ extension AddViewController: UITextFieldDelegate {
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
 
+        var frame = textField.frame
+        
         if textField == self.phoneTextField {
-
-            var frame = self.phoneTextField.frame
+ 
             frame.size.height += AddViewController.addButtonOffset
-            self.scrollView.scrollRectToVisible(frame, animated: true)
-        } else {
-
-            self.scrollView.scrollRectToVisible(self.nameTextField.frame, animated: true)
         }
+        
+        self.scrollView.scrollRectToVisible(frame, animated: true)
     }
 }
