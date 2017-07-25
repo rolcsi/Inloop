@@ -121,7 +121,9 @@ class DetailViewController: UIViewController, StackVC, UserVC {
 
     private func checkForItems() {
 
-        let optionalUrl = URL(string: Constants.detailUrl + self.userId!)
+        guard let userId = self.userId else { return }
+        
+        let optionalUrl = URL(string: Constants.detailUrl + userId)
 
         guard let url = optionalUrl else { return }
 
@@ -136,7 +138,7 @@ class DetailViewController: UIViewController, StackVC, UserVC {
 
                 let newItems = self.modifyDict(items: items)
 
-                guard let user = self.user(for: self.userId) else { return }
+                guard let user = self.user(for: userId) else { return }
 
                 self.dataStack?.sync(newItems, inEntityNamed: "CDItem", parent: user, completion: { (error) in
 
